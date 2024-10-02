@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const slugify = require('slugify');
 
 // eslint-disable-next-line import/no-extraneous-dependencies
-const validator = require('validator');
+// const validator = require('validator');
 
 const tourSchema = new mongoose.Schema(
   {
@@ -119,7 +119,7 @@ tourSchema.pre(/^find/, function (next) {
 });
 
 tourSchema.post(/^find/, function (doc, next) {
-  console.log(`Query Took: ${Date.now() - this.start} millesecond`);
+  console.log(`Query Took: ${Date.now() - this.start} millisecond`);
 
   next();
 });
