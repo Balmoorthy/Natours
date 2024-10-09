@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 const slugify = require('slugify');
+const catchAsync = require('../utils/catchAsync');
 // const User = require('./userModel');
 
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -182,11 +183,11 @@ tourSchema.post(/^find/, function (doc, next) {
 });
 
 // AGGREGATION MIDDLEWARE
-tourSchema.pre('aggregate', function (next) {
-  this.pipeline().unshift({ $match: { secretTour: { $ne: true } } });
-  console.log(this);
-  next();
-});
+// tourSchema.pre('aggregate', function (next) {
+//   this.pipeline().unshift({ $match: { secretTour: { $ne: true } } });
+//   console.log(this);
+//   next();
+// });
 
 const Tour = mongoose.model('Tour', tourSchema);
 
