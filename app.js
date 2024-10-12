@@ -92,4 +92,20 @@ app.all('*', (req, res, next) => {
 
 app.use(globalErrorHandler);
 
+app.use(
+  express.static('public', {
+    setHeaders: (res, path) => {
+      if (path.endsWith('.js')) {
+        res.setHeader('Content-Type', 'application/javascript');
+      }
+    },
+  }),
+);
+
 module.exports = app;
+
+// pkg file
+
+// "engines": {
+//   "node": ">=20.15.0"
+// }
