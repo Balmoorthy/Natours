@@ -7,7 +7,7 @@ module.exports = class Email {
   constructor(user, url) {
     this.to = user.email;
     this.firstName = user.name.split(' ')[0];
-    this.url - url;
+    this.url = url;
     this.from = `Bal Moorthy <${process.env.EMAIL_FROM}>`;
   }
 
@@ -30,7 +30,7 @@ module.exports = class Email {
   async send(template, subject) {
     // 1) Render HTML based on a pug template
     const html = pug.renderFile(
-      `${__dirname}/../../views/emails/${template}.pug`,
+      `${__dirname}/../views/emails/${template}.pug`,
       {
         firstName: this.firstName,
         url: this.url,
