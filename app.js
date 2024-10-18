@@ -26,7 +26,23 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Set security HTTP header
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        'script-src': ["'self'", 'https://js.stripe.com'],
+        'style-src': ["'self'", "'unsafe-inline'"],
+        'frame-src': ["'self'", 'https://js.stripe.com'],
+        // Allow connections to Stripe API and WebSocket
+        'connect-src': [
+          "'self'",
+          'https://api.stripe.com',
+          'ws://127.0.0.1:49369',
+        ],
+      },
+    },
+  }),
+);
 
 //   contentSecurityPolicy: {
 //     directives: {
