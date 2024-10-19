@@ -8,8 +8,8 @@
     "start:prod": "NODE_ENV=production nodemon server.js",
     "debug": "ndb server.js",
     "dev": "concurrently \"nodemon server.js\" \"parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js --public-url .\"",
-    "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js --public-url .",
-    "build:js": "parcel build ./public/js/index.js --out-dir ./public/js --out-file bundle.js --public-url"
+    "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
+    "build:js": "parcel build ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
   },
   "author": "Bal Moorthy",
   "license": "ISC",
@@ -17,6 +17,7 @@
     "@babel/polyfill": "^7.12.1",
     "axios": "^0.18.0",
     "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
     "concurrently": "^9.0.1",
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.4.5",

@@ -7,7 +7,6 @@ const handleCastErrorDB = (err) => {
 
 const handleDuplicateFieldsDB = (err) => {
   const value = err.errmsg.match(/(["'])(\\?.)*?\1/)[0];
-  console.log(value);
 
   const message = `Duplicate field value: ${value}. Please use another value!`;
   return new AppError(message, 400);
@@ -26,7 +25,6 @@ const handleJWTExpiresError = () =>
   new AppError('Your token has expired! Please log in again!', 401);
 
 const sendErrorDev = (err, req, res) => {
-  console.log(req.originalUrl);
   // A) API
   if (req.originalUrl.startsWith('/api')) {
     return res.status(err.statusCode).json({
