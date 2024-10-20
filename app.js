@@ -5,6 +5,7 @@ const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
+const cors = require('cors');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
@@ -25,6 +26,13 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
 // 1) GLOBAL MIDDLEWARE
+// Implement CORS,
+app.use(cors());
+// Access-Control-Allow-Origin *
+// api.natours.com, if Front end natours.ocm
+
+app.options('*', cors());
+
 // Serving static files
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -46,13 +54,6 @@ app.use(
     },
   }),
 );
-
-//   contentSecurityPolicy: {
-//     directives: {
-//       'script-src': ["'self'", 'cdnjs.cloudflare.com'],
-//       'style-src': null,
-//     },
-//   },
 
 // Development logging
 if (process.env.NODE_ENV === 'development') {
