@@ -69,7 +69,7 @@ This is a full-featured tour booking application built using **Express.js** for 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/tour-booking-app.git   
+   git clone https://github.com/Balmoorthy/Natours.git   
 2. Install dependencies:
    ```bash
    npm install
