@@ -88,7 +88,7 @@ This is a full-featured tour booking application built using **Express.js** for 
 
 # 📄 API Documentation
 
-You can test the API using Postman. Import the provided `postman_collection.json file` to easily test all the endpoints.
+You can test the API using Postman. Import the provided https://documenter.getpostman.com/view/38522747/2sAXxQdrq6 to easily test all the endpoints.
 
 # 📫 Contact
 
