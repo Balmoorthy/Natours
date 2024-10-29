@@ -17,6 +17,7 @@ This is a full-featured tour booking application built using **Express.js** for 
 - **User Authentication**: Implemented user authentication using **JWT tokens** for secure access.
 - **User Authorization**: Protected routes based on user roles and permissions.
 - **Password Reset**: Implemented password reset functionality using tokens.
+- **Payment Integration**: Integrated secure payment processing to enable users to complete tour bookings online.
 - **Email Notifications**: Integrated email service for sending notifications.
 - **Data Sanitization & Security**: Protected against NoSQL injections and sanitized inputs.
 - **Aggregation Pipelines**: Utilized MongoDB aggregation for complex data handling such as matching, grouping, and projecting.
